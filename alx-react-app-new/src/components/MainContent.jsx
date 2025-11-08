@@ -8,7 +8,7 @@ function MainContent() {
 
   return (
     <main style={mainStyle}>
-      <p>Here is my list of favorite cities...</p>
+      <p>I love to visit New York, Paris, and Tokyo.</p>
     </main>
   );
 }
