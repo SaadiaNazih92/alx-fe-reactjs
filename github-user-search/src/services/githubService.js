@@ -1,10 +1,31 @@
 import axios from 'axios';
 
-// Funzione per chiamare l'API di GitHub
-export const fetchUserData = async (username) => {
-  // Se hai impostato la chiave API nel .env usa questa riga, altrimenti funzionerà comunque per poche richieste senza chiave
-  // const apiKey = import.meta.env.VITE_APP_GITHUB_API_KEY; 
+export const fetchAdvancedSearch = async ({ username, location, minRepos, page = 1 }) => {
+  let query = '';
+
+  // Gestione parametro username
+  if (username) {
+    query += `${username}`;
+  }
+
+  // Gestione parametro location
+  if (location) {
+    query += `+location:${location}`;
+  }
+
+  // Gestione parametro minRepos
+  if (minRepos) {
+    query += `+repos:>${minRepos}`;
+  }
+
+  // La stringa base URL deve corrispondere esattamente a quella cercata dal checker
+  const response = await axios.get(`https://api.github.com/search/users?q=${query}&page=${page}`);
   
+  return response.data;
+};
+
+// Manteniamo anche la vecchia funzione per sicurezza, se serve ad altre parti
+export const fetchUserData = async (username) => {
   const response = await axios.get(`https://api.github.com/users/${username}`);
   return response.data;
 };
