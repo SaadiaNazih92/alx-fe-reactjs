@@ -1,9 +1,12 @@
-export default function App() {
+import React from 'react';
+import HomePage from './components/HomePage';
+
+function App() {
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold text-blue-500 underline">
-        working! Tailwind è attivo.
-      </h1>
+    <div className="bg-gray-50 min-h-screen text-gray-900 font-sans">
+      <HomePage />
     </div>
-  )
+  );
 }
+
+export default App;
