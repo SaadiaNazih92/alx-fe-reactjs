@@ -1,11 +1,18 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './components/HomePage';
+import RecipeDetail from './components/RecipeDetail'; // Non preoccuparti se dà errore ora
 
 function App() {
   return (
-    <div className="bg-gray-50 min-h-screen text-gray-900 font-sans">
-      <HomePage />
-    </div>
+    <Router>
+      <div className="bg-gray-50 min-h-screen w-full">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/recipe/:id" element={<RecipeDetail />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

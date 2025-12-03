@@ -3,24 +3,27 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "Un classico piatto italiano con uova, formaggio, guanciale e pepe nero.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/150",
+    "ingredients": ["Spaghetti", "Uova", "Pecorino Romano", "Guanciale", "Pepe Nero"],
+    "instructions": [
+      "Cuoci la pasta in acqua bollente salata.",
+      "Rosola il guanciale in padella finché non è croccante.",
+      "Sbatti le uova con il pecorino e il pepe.",
+      "Scola la pasta e uniscila al guanciale.",
+      "A fuoco spento, aggiungi il composto di uova e mescola velocemente."
+    ]
   },
   {
     "id": 2,
     "title": "Pollo al Curry",
     "summary": "Pezzi di pollo grigliato cotti in una salsa di pomodoro speziata e cremosa.",
-    "image": "https://via.placeholder.com/150"
-  },
-  {
-    "id": 3,
-    "title": "Tiramisù Classico",
-    "summary": "Il dolce italiano per eccellenza a base di savoiardi, caffè e mascarpone.",
-    "image": "https://via.placeholder.com/150"
-  },
-  {
-    "id": 4,
-    "title": "Insalata Greca",
-    "summary": "Un'insalata fresca con cetrioli, pomodori, olive nere e formaggio feta.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/150",
+    "ingredients": ["Petto di pollo", "Yogurt", "Garam Masala", "Pomodoro", "Panna"],
+    "instructions": [
+      "Marinare il pollo con yogurt e spezie.",
+      "Cuocere il pollo in padella.",
+      "Preparare la salsa con pomodoro e spezie.",
+      "Unire il pollo alla salsa e aggiungere la panna."
+    ]
   }
 ]
