@@ -16,7 +16,7 @@ const FormikForm = () => {
     password: '',
   };
 
-  // Funzione di invio
+  // Funzione di invioo
   const onSubmit = (values, { resetForm }) => {
     console.log('Dati modulo inviati (Formik):', values);
     alert('Registrazione Formik riuscita!');
