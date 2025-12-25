@@ -1,6 +1,6 @@
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import PostsComponent from './PostsComponent';
+import PostsComponent from './components/PostsComponent';
 
 // Crea il client che gestirà la cache
 const queryClient = new QueryClient();
