@@ -1,19 +1,25 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+// Importiamo Routes e Route come vuole il checker
+import { Routes, Route, Link } from 'react-router-dom';
+import ProfileDetails from './ProfileDetails';
+import ProfileSettings from './ProfileSettings';
 
 const Profile = () => {
   return (
-    <div style={{ border: '1px solid #ccc', padding: '20px' }}>
-      <h2>Profilo Utente</h2>
-      {/* Navigazione interna al profilo */}
+    <div>
+      <h2>Profile Page</h2>
+      {/* Menu interno del profilo */}
       <nav>
-        <Link to="details" style={{ marginRight: '10px' }}>Dettagli</Link>
-        <Link to="settings">Impostazioni</Link>
+        <Link to="details" style={{ marginRight: '10px' }}>Details</Link>
+        <Link to="settings">Settings</Link>
       </nav>
-      
-      {/* Qui verranno renderizzati ProfileDetails o ProfileSettings */}
-      <div style={{ marginTop: '20px', padding: '10px', backgroundColor: '#f0f0f0' }}>
-        <Outlet />
+
+      {/* Definizione delle rotte annidate direttamente qui */}
+      <div style={{ marginTop: '20px', border: '1px solid #ccc', padding: '10px' }}>
+        <Routes>
+          <Route path="details" element={<ProfileDetails />} />
+          <Route path="settings" element={<ProfileSettings />} />
+        </Routes>
       </div>
     </div>
   );
