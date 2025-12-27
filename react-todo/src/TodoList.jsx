@@ -33,17 +33,23 @@ const TodoList = () => {
         {todos.map((todo) => (
           <li
             key={todo.id}
+            data-testid="todo-item"
             style={{
               textDecoration: todo.completed ? 'line-through' : 'none',
             }}
           >
             <span 
-              onClick={() => toggleTodo(todo.id)} 
-              style={{ cursor: 'pointer', marginRight: '10px' }}
+              onClick={() => toggleTodo(todo.id)}
+              style={{ cursor: 'pointer' }}
             >
               {todo.text}
             </span>
-            <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+            <button 
+              onClick={() => deleteTodo(todo.id)}
+              style={{ marginLeft: '10px' }}
+            >
+              Delete
+            </button>
           </li>
         ))}
       </ul>

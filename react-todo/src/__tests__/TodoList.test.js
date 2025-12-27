@@ -8,6 +8,7 @@ describe('TodoList Component', () => {
     render(<TodoList />);
     expect(screen.getByText('Learn React')).toBeInTheDocument();
     expect(screen.getByText('Build a Todo App')).toBeInTheDocument();
+    expect(screen.getByText('Master Jest')).toBeInTheDocument();
   });
 
   test('allows users to add a new todo', () => {
@@ -26,11 +27,14 @@ describe('TodoList Component', () => {
     const todoText = screen.getByText('Learn React');
     const listItem = todoText.closest('li');
 
-    // Click to complete
+    // Verify initial state is not completed (no line-through)
+    expect(listItem).toHaveStyle('text-decoration: none');
+
+    // Click to toggle (complete)
     fireEvent.click(todoText);
     expect(listItem).toHaveStyle('text-decoration: line-through');
 
-    // Click to un-complete
+    // Click to toggle again (uncomplete)
     fireEvent.click(todoText);
     expect(listItem).toHaveStyle('text-decoration: none');
   });
@@ -40,8 +44,7 @@ describe('TodoList Component', () => {
     const todoText = 'Build a Todo App';
     expect(screen.getByText(todoText)).toBeInTheDocument();
 
-    // Find the delete button for this specific item
-    // Since our structure is simple, we find the text, go to parent li, find button
+    // Find the specific delete button for this item
     const deleteButton = screen.getByText(todoText).parentElement.querySelector('button');
     
     fireEvent.click(deleteButton);
