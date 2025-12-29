@@ -1,0 +1,15 @@
+import RecipeList from './components/RecipeList';
+import AddRecipeForm from './components/AddRecipeForm';
+import './App.css'; // Mantiene lo stile di default se presente
+
+function App() {
+  return (
+    <div>
+      <h1>Recipe Sharing Application</h1>
+      <AddRecipeForm />
+      <RecipeList />
+    </div>
+  );
+}
+
+export default App;
